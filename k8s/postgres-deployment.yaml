@@ -27,7 +27,6 @@ spec:
             subPath: postgres # Organised into a folder postgres inside the persistent volume
         env:
           - name: POSTGRES_PASSWORD
-#            value: postgres_password
             valueFrom:
                 secretKeyRef:
                   name: pg-password
