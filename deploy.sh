@@ -5,12 +5,12 @@ docker build  -t hoesslj/multi-server:latest -t hoesslj/multi-server:$GIT_SHA -f
 docker build  -t hoesslj/multi-worker:latest -t hoesslj/multi-worker:$GIT_SHA -f ./server/Dockerfile ./worker
 
 # Push to dockerhub
-docker push multi-client:latest
-docker push multi-server:latest
-docker push multi-worker:latest
-docker push multi-client:$GIT_SHA
-docker push multi-server:$GIT_SHA
-docker push multi-worker:$GIT_SHA
+docker push hoesslj/multi-client:latest
+docker push hoesslj/multi-server:latest
+docker push hoesslj/multi-worker:latest
+docker push hoesslj/multi-client:$GIT_SHA
+docker push hoesslj/multi-server:$GIT_SHA
+docker push hoesslj/multi-worker:$GIT_SHA
 
 # Apply the kubernetes files [we setup the google-cloud sdk cli already]
 kubectl apply -f k8s
